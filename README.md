@@ -45,13 +45,13 @@ Các ảnh giao diện được lưu trong thư mục `docs/images/` để hiể
 
 ![Form đăng ký gói DATA](docs/images/form-dang-ky-data.png)
 
-### 6. Giao diện đăng nhập Admin
+### 6. Giao diện Dashboard Admin
 
-![Đăng nhập Admin](docs/images/login-admin.png)
+![Dashboard  Admin](docs/images/admin.png)
 
-### 7. Dashboard quản trị
+### 7. Quản lý gói cước
 
-![Dashboard quản trị](docs/images/dashboard-admin.png)
+![Quản lý gói cước](docs/images/quan-ly-dang-ky.png)
 
 ## Stack công nghệ
 
