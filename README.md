@@ -1,61 +1,182 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Viettel Subscription
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Website đăng ký gói cước Viettel bằng Laravel, giúp khách hàng xem, tìm kiếm và đăng ký các gói data, combo, trả trước, trả sau, cùng dashboard quản trị cho admin.
 
-## About Laravel
+## Mục tiêu dự án
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Hiển thị danh sách gói cước điện thoại Viettel theo loại và mạng 4G/5G.
+- Tạo trải nghiệm đặt mua gói cước dễ dàng cho khách hàng.
+- Hỗ trợ đăng nhập, đăng ký tài khoản và xác thực OTP qua email.
+- Cung cấp dashboard cho admin để quản lý gói cước và thống kê doanh thu.
+- Thiết kế theo mô hình web app quản lý dịch vụ viễn thông.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Tính năng chính
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Đăng nhập / đăng ký / logout
+- Xác thực OTP qua email
+- Trang danh mục gói cước: data, combo, trả trước, trả sau
+- Tìm kiếm gói theo mã hoặc tên
+- Chọn SIM và đăng ký gói
+- Quản lý gói cước (thêm, sửa, xóa)
+- Dashboard admin với thống kê: số đăng ký, doanh thu, số người dùng, số gói
+- Xuất báo cáo thống kê
 
-## Learning Laravel
+## Giao diện minh họa
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Các ảnh giao diện được lưu trong thư mục `docs/images/` để hiển thị đúng trên GitHub.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 1. Trang chủ / giới thiệu dịch vụ
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+![Trang chủ Viettel](docs/images/trang-chu-viettel.png)
 
-## Laravel Sponsors
+### 2. Danh sách gói Only Data
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+![Danh sách gói Only Data](docs/images/danh-sach-only-data.png)
 
-### Premium Partners
+### 3. Danh sách gói Data và Combo
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+![Danh sách gói Data và Combo](docs/images/danh-sach-data-combo.png)
 
-## Contributing
+### 4. Trang giới thiệu gói trả sau
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+![Trang giới thiệu gói trả sau](docs/images/trang-gioi-thieu-tra-sau.png)
 
-## Code of Conduct
+### 5. Form đăng ký gói DATA
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+![Form đăng ký gói DATA](docs/images/form-dang-ky-data.png)
 
-## Security Vulnerabilities
+### 6. Giao diện đăng nhập Admin
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+![Đăng nhập Admin](docs/images/login-admin.png)
+
+### 7. Dashboard quản trị
+
+![Dashboard quản trị](docs/images/dashboard-admin.png)
+
+## Stack công nghệ
+
+- PHP 8.2
+- Laravel 12
+- SQLite (mặc định trong `.env.example`)
+- Vite + Tailwind
+- Blade templates
+- Composer + npm
+
+## Cấu trúc dự án
+
+```text
+app/
+  Http/Controllers/
+  Models/
+config/
+database/
+docs/
+  images/
+public/
+resources/
+routes/
+storage/
+tests/
+Dockerfile
+README.md
+render.yaml
+composer.json
+package.json
+```
+
+## Quy trình nghiệp vụ
+
+### Khách hàng
+
+1. Truy cập trang chủ và xem danh sách gói.
+2. Chọn loại gói phù hợp.
+3. Điền thông tin khách hàng / SIM nếu cần.
+4. Gửi đăng ký.
+5. Chờ admin xử lý hoặc kích hoạt gói.
+
+### Admin
+
+1. Đăng nhập với tài khoản có role `admin`.
+2. Vào dashboard quản trị.
+3. Quản lý các gói cước và theo dõi trạng thái đơn đăng ký.
+4. Xem báo cáo và xuất thống kê.
+
+## Yêu cầu môi trường
+
+- PHP >= 8.2
+- Composer
+- Node.js >= 18
+- Git
+
+## Cài đặt nhanh
+
+```bash
+git clone <repo-url>
+cd viettel-subscription
+composer install
+npm install
+cp .env.example .env
+php artisan key:generate
+```
+
+### Cấu hình database
+
+Dự án mặc định dùng SQLite:
+
+```bash
+touch database/database.sqlite
+```
+
+Sau đó chạy migration:
+
+```bash
+php artisan migrate
+```
+
+Nếu muốn seed dữ liệu mẫu:
+
+```bash
+php artisan db:seed
+```
+
+## Chạy ứng dụng
+
+```bash
+npm run dev
+php artisan serve
+```
+
+Mở trình duyệt tại:
+
+```text
+http://localhost:8000
+```
+
+## Build production
+
+```bash
+npm run build
+php artisan optimize
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+```
+
+## Triển khai
+
+- `render.yaml`: cấu hình deploy lên Render
+- `Dockerfile`: build container cho ứng dụng
+
+## Tài liệu chi tiết
+
+Xem thêm tại: [docs/PROJECT_DOCUMENTATION.md](./docs/PROJECT_DOCUMENTATION.md)
+
+## Lưu ý
+
+- Mặc định mail trong môi trường dev được cấu hình theo `MAIL_MAILER=log`, nên OTP sẽ được ghi log thay vì gửi thật.
+- Hệ thống phân quyền dựa trên cột `role` trong bảng `users`.
+- Để truy cập chức năng admin, tài khoản cần có `role = admin`.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Dự án này được phát hành theo giấy phép MIT.
